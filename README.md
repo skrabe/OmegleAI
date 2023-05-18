@@ -22,6 +22,7 @@ As stated before, the script uses artificial intelligence to communicate with ot
 
 ## `OmegleAI.py`
 Upon launching the script, user is greeted with a Setup window and easy-to-use settings. So let's go trought them together.
+
 ![Setup window](https://i.imgur.com/KqnZI7I.png)
 **-Please input your API key from OpenAI**
 	As the text says, it requires user to input his OpenAI API Key. The blue text is interactable and leads to a tutorial explaining how to obtain one. I should note that API Key from OpenAI is free, you just need to have an OpenAI account and you will be granted with free 5$ of credits! Don't worry, even though it may seem like a small amount, I can assure you it's going to last long! If you wish to know more about the AI prices, [click here.](https://openai.com/pricing)
