@@ -15,6 +15,7 @@ Modules used in Python were:
  as well as many others...
  
  This project relies on [OpenAI API Key](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key) usage which is needed to make this program run.
+ 
  It also uses [Chromium - WebDriver for Chrome.](https://chromedriver.chromium.org/downloads)
 
 # Explaining the project
