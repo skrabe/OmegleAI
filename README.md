@@ -80,7 +80,7 @@ If the other person skips the chat, or perhaps even you, the program itself is g
 
 # How to launch
 
- 1.  Clone the code : 
+ 1.  Clone the code : `git clone https://github.com/skrabe/OmegleAI.git`
  2. Install all required dependencies.
  3. Once installed run it with VSCode or via command prompt by running `python omegleai.py` when located in the OmegleAI folder.
  4. You are ready to go. **Enjoy!**
