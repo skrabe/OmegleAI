@@ -11,9 +11,10 @@ Modules used in Python were:
  - selenium,
  - tkinter,
  - openai,
- - ttkthemes,
- as well as many others...
+ - ttkthemes...
+
  This project relies on [OpenAI API Key](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key) usage which is needed to make this program run.
+ 
  It also uses [Chromium - WebDriver for Chrome.](https://chromedriver.chromium.org/downloads)
 
 # Explaining the project
@@ -32,7 +33,8 @@ Upon launching the script, user is greeted with a Setup window and easy-to-use s
 **-Choose your AI**
 	You can choose one of the already setup ones: Batman, Superman, Deadpool, or you can make your own AI by inputting your own prompt. Prompt that Batman uses goes like this:
 	 "*The AI bot, embodying the persona of the enigmatic Batman, taps into the profound capabilities of the OpenAI Davinci language model. It possesses a remarkable level of awareness and intricacy, enabling it to discern and comprehend the historical context of previous messages exchanged. By leveraging the knowledge gained from previous interactions, which include the following messages from a stranger: "  `+  "\n".join(messages) +`  ", the bot assimilates a holistic understanding of the ongoing conversation. Now, in response to your latest message, which states: '"  `+  latest_message_text  +`  "', Batman's essence compels the bot to respond with utmost brevity, encapsulating his essence. Brace yourself for a concise yet potent response:*"
-	 ~~**PLEASE NOTE** The parts of the prompt that are highlighted are part of the code that are NOT going to work with the Custom AI, so you can just **skip them** and make a prompt without any code.~~
+	 
+~~**PLEASE NOTE** The parts of the prompt that are highlighted are part of the code that are NOT going to work with the Custom AI, so you can just **skip them** and make a prompt without any code.~~
 
 As of today, the custom AI is **aware** of the previous messages of the conversations, but you still **DO NOT** need to input any code, just a prompt which describes the character he's playing.
 	 
@@ -76,11 +78,10 @@ If the other person skips the chat, or perhaps even you, the program itself is g
  **Chromium(chromedriver.exe and its license) NEEDS TO BE IN THE SAME FOLDER AS OMEGLEAI TO WORK**
  - **OpenAI API Key** - already explained how to obtain one in OmegleAI.py section.
  - **Python modules:** 
-	1.  `selenium`
-	2. `tkinter`
-	3.  `openai`
-	4.  `ttkthemes`
-	5.  `webdriver_manager (optional)`
+	 - `selenium`,
+	 - `tkinter`,
+	 - `openai`,
+	 - `ttkthemes`.
 
 # How to launch
 
