@@ -22,7 +22,9 @@ As stated before, the script uses artificial intelligence to communicate with ot
 
 ## `OmegleAI.py`
 Upon launching the script, user is greeted with a Setup window and easy-to-use settings. So let's go trought them together.
+
 ![Setup window](https://i.imgur.com/KqnZI7I.png)
+
 **-Please input your API key from OpenAI**
 	As the text says, it requires user to input his OpenAI API Key. The blue text is interactable and leads to a tutorial explaining how to obtain one. I should note that API Key from OpenAI is free, you just need to have an OpenAI account and you will be granted with free 5$ of credits! Don't worry, even though it may seem like a small amount, I can assure you it's going to last long! If you wish to know more about the AI prices, [click here.](https://openai.com/pricing)
 	**DISCLAMER:** For this program to work you are going to need credits on your OpenAI account, simply opening one will grant you 5$ worth of credits. It's going to use some of those credits for AI usage.
@@ -82,7 +84,7 @@ If the other person skips the chat, or perhaps even you, the program itself is g
 
 # How to launch
 
- 1.  Download the OmegleAI folder.
+ 1. Clone the code: git clone `https://github.com/skrabe/OmegleAI.git`
  2. Install all required dependencies.
  3. Once installed run it with VSCode or via command prompt by running `python omegleai.py` when located in the OmegleAI folder.
  4. You are ready to go. **Enjoy!**
