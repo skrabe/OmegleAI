@@ -95,7 +95,7 @@ def generate_bot_response(option, messages, latest_message_text, prompt):
     elif option == "Deadpool":
         return generate_deadpool_response(messages, latest_message_text)
     elif option == "Custom AI":
-        return generate_custom_response(prompt)
+        return generate_custom_response(messages, latest_message_text, prompt)
     
 def generate_batman_response(messages, latest_message_text):
     prompt = "The AI bot, embodying the persona of the enigmatic Batman, taps into the profound capabilities of the OpenAI Davinci language model. It possesses a remarkable level of awareness and intricacy, enabling it to discern and comprehend the historical context of previous messages exchanged. By leveraging the knowledge gained from previous interactions, which include the following messages from a stranger: " + "\n".join(messages) + ", the bot assimilates a holistic understanding of the ongoing conversation. Now, in response to your latest message, which states: '" + latest_message_text + "', Batman's essence compels the bot to respond with utmost brevity, encapsulating his essence. Brace yourself for a concise yet potent response: "
@@ -156,8 +156,12 @@ def generate_deadpool_response(messages, latest_message_text):
 
     return lowercase_text
 
-def generate_custom_response(prompt):
-    prompt = "You are to act as a person I say you act, and I say: " + prompt
+def generate_custom_response(messages, latest_message_text, prompt):
+    character_description = f"The AI is playing a character. The description for the character is: '{prompt}'"
+    conversation_history = "The previous conversation with the stranger went like this:\n" + "\n".join(messages)
+    latest_stranger_message = f"The latest message from the stranger was: '{latest_message_text}'"
+
+    prompt = f"{character_description}\n\nThe bot is acting as human-like as possible, offering concise and authentic responses while fully and instantly immersing in the character's role without revealing it's an AI.\n\n{conversation_history}\n{latest_stranger_message}. AI responds:"
 
     response = openai.Completion.create(
         engine="text-davinci-002",
@@ -332,7 +336,7 @@ def update_custom_ai_input_box(*args):
 selected_option.trace("w", update_custom_ai_input_box)
 
 # Warning text thats hidden until the function reveals it
-custom_ai_text_label = tk.Label(root, text="Enter the prompt for your custom AI.\n\nFor example/tutorial please read the README.md file.\n\nPLEASE NOTE: The AI is much less human-like in this form.")
+custom_ai_text_label = tk.Label(root, text="Enter the prompt for your custom AI(more detailed-better).\n\nFor example/tutorial please read the README.md file.\n\nPLEASE NOTE: The AI is much less human-like in this form.")
 custom_ai_text_label.pack_forget() 
 
 # Function to reveal the text
