@@ -47,7 +47,8 @@ When you had enough, you can just press Close to stop everything and close every
 
 ## 🟦Customizable options
 Aside from Custom AI which we talked about, users can also customize their preferred topics. You can do that by inputting your preferred topics on the input box that's on the bottom of the setup screen!
-Leaving that field empty will exit the program.
+
+Leaving that field empty will **exit** the program.
 
 
 ## 🤖AI
