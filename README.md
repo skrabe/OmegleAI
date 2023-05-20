@@ -66,8 +66,8 @@ Everything typed here was typed by the AI.
 The text is also stripped of interpunction signs and put in lowercase to look more "legit" like an internet user.
 ## 💻Automatization
 
-The topics are automatically inserted and it automatically starts searching for a chat, hence why the topics need to be changed in the code itself.
-If the other person skips the chat, or perhaps even you, the program itself is going to start a new conversation.
+The topics are automatically inserted and it automatically starts searching for a chat.
+If the other person skips the chat, or perhaps even you, the program itself is going to start a new conversation until closed.
 
 ## 🚩Requirements
 
