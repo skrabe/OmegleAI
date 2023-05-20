@@ -86,6 +86,15 @@ def on_enter(event):
 def on_leave(event):
     canvas.itemconfig(text2, font=("Arial", 10, "bold"))
 
+def topic_strip(topic):
+    y=[]
+    topic2=topic.split()
+    for x in topic2:
+        x = x.strip(', ')
+        y.append(x)
+    print(y)
+    return y
+
 # Bunch of responses depending on the choice
 def generate_bot_response(option, messages, latest_message_text, prompt):
     if option == "Batman":
@@ -161,7 +170,7 @@ def generate_custom_response(messages, latest_message_text, prompt):
     conversation_history = "The previous conversation with the stranger went like this:\n" + "\n".join(messages)
     latest_stranger_message = f"The latest message from the stranger was: '{latest_message_text}'"
 
-    prompt = f"{character_description}\n\nThe bot is acting as human-like as possible, offering concise and authentic responses while fully and instantly immersing in the character's role without revealing it's an AI.\n\n{conversation_history}\n{latest_stranger_message}. AI responds:"
+    prompt = f"{character_description}\n\nThe bot is acting as human-like as possible, offering concise and authentic responses while fully and instantly immersing in the character's role without revealing it's an AI.\n\n{conversation_history}\n{latest_stranger_message}. The bot responds, in character of a role that was given to him, in a short and reasonable manner: "
 
     response = openai.Completion.create(
         engine="text-davinci-002",
@@ -187,7 +196,7 @@ def start_chat():
     prompt = custom_ai_input_box.get()
     
     # Automated stuff when first entering Omegle
-    topic = ["batman", "comics", "meme", "talk", "books", "ai"]
+    topic = topic_strip(topic_box2.get())
     for x in topic:
         topics = driver.find_element(By.CSS_SELECTOR, ".newtopicinput")
         topics.send_keys(x)
@@ -258,10 +267,10 @@ x = (screen_width // 2) + (window_width - 200)
 y = (screen_height // 2) - (window_height // 2)
 root.geometry(f"{window_width}x{window_height}+{x}+{y}")
 
-# Just simply import the azure.tcl file
+# Import
 root.tk.call("source", "azure.tcl")
 
-# Then set the theme you want with the set_theme procedure
+# Theme
 root.tk.call("set_theme", "light")
 
 style = ttk.Style()
@@ -322,7 +331,7 @@ drop_down.pack(pady=15, padx=10, anchor="center")
 selected_option.set("Batman")
 
 custom_ai_input_box = ttk.Entry(root, style="Custom.TEntry", state=DISABLED)
-custom_ai_input_box.pack(pady=30, padx=10, anchor="nw", fill="x")
+custom_ai_input_box.pack(pady=10, padx=10, anchor="nw", fill="x")
 
 def update_custom_ai_input_box(*args):
     selected = selected_option.get()
@@ -336,8 +345,14 @@ def update_custom_ai_input_box(*args):
 selected_option.trace("w", update_custom_ai_input_box)
 
 # Warning text thats hidden until the function reveals it
-custom_ai_text_label = tk.Label(root, text="Enter the prompt for your custom AI(more detailed-better).\n\nFor example/tutorial please read the README.md file.\n\nPLEASE NOTE: The AI is much less human-like in this form.")
+custom_ai_text_label = tk.Label(root, text="Enter the prompt for your custom AI(more detailed-better).\nFor example/tutorial please read the README.md file.\nPLEASE NOTE: The AI is much less human-like in this form.")
 custom_ai_text_label.pack_forget() 
+
+text4 = canvas.create_text(165, 377, text="Input your topics: ", fill="black",
+                          font=("Arial", 10, "bold"), anchor="se")
+
+topic_box2 = ttk.Entry(root, style="Custom.TEntry")
+topic_box2.pack(pady=105, padx=10, anchor="se", fill="x")
 
 # Function to reveal the text
 def update_custom_ai_text_label(*args):
@@ -362,6 +377,11 @@ def start_chat_thread():
     openai.api_key = input_box.get()
     if openai.api_key == "":
         print('WRONG API KEY')
+        root.destroy()
+        sys.exit(0)
+    topic = topic_box2.get()
+    if topic == '':
+        print('TOPICS CANT BE EMPTY')
         root.destroy()
         sys.exit(0)
     chat_thread = Thread(target=start_chat)
