@@ -5,7 +5,7 @@ Video demo of the project can be accessed by [clicking here!](https://www.youtub
 
 # 📝Features
 
-The whole script was written in [Python 3.9.13](https://www.python.org/downloads/).
+The whole script was written in [Python 3.9](https://www.python.org/downloads/).
 Modules used in Python were: 
 
  - selenium,
